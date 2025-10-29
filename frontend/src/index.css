@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-white antialiased;
+  }
+  
+  * {
+    @apply scrollbar-thin scrollbar-thumb-dark-border scrollbar-track-transparent;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-6 rounded-full transition-all duration-200 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply border border-white/20 hover:bg-white/10 text-white font-semibold py-2 px-6 rounded-full transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-dark-card border border-dark-border rounded-2xl p-6 transition-all duration-200 hover:border-primary/50;
+  }
+  
+  .input {
+    @apply bg-dark-surface border border-dark-border rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors;
+  }
+}
+
+/* Custom scrollbar styling */
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thumb-dark-border::-webkit-scrollbar-thumb {
+    @apply bg-dark-border rounded-full;
+  }
+  
+  .scrollbar-track-transparent::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+}
+
+/* Smooth video transitions */
+video {
+  @apply transition-all duration-300;
+}
+
+/* Hide scrollbar for snap scroll containers */
+.snap-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.snap-container::-webkit-scrollbar {
+  display: none;
+}
+
